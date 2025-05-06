@@ -85,33 +85,38 @@ const SignUpForm = () => {
         <form onSubmit={handleSignUp}>
           <ProfilePhotoSelector image={profilePic} setImage={setProfilePic} />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Input
-              value={fullName}
-              onChange={({ target }) => setFullName(target.value)}
-              label="Full Name"
-              placeholder="Your Name"
-              type="text"
-            />
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+  <div className="w-full">
+    <Input
+      value={fullName}
+      onChange={({ target }) => setFullName(target.value)}
+      label="Full Name"
+      placeholder="Your Name"
+      type="text"
+    />
+  </div>
 
-            <Input
-              value={email}
-              onChange={({ target }) => setEmail(target.value)}
-              label="Email Address"
-              placeholder="Your email"
-              type="text"
-            />
+  <div className="w-full">
+    <Input
+      value={email}
+      onChange={({ target }) => setEmail(target.value)}
+      label="Email Address"
+      placeholder="Your email"
+      type="text"
+    />
+  </div>
 
-            <div className="col-span-2">
-              <Input
-                value={password}
-                onChange={({ target }) => setPassword(target.value)}
-                label="Password"
-                placeholder="Min 8 Characters"
-                type="password"
-              />
-            </div>
-          </div>
+  <div className="col-span-1 md:col-span-2 w-full">
+    <Input
+      value={password}
+      onChange={({ target }) => setPassword(target.value)}
+      label="Password"
+      placeholder="Min 8 Characters"
+      type="password"
+    />
+  </div>
+</div>
+
 
           {error && <p className="text-red-500 text-xs pb-2.5">{error}</p>}
 
